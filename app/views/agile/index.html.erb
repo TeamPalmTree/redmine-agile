@@ -1,2 +1,5 @@
 <h2>Agile</h2>
 <%= render_tabs agile_tabs %>
+<% content_for :header_tags do %>
+    <%= javascript_include_tag 'agile', :plugin => 'redmine_agile' %>
+<% end %>
