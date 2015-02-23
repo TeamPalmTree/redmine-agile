@@ -4,6 +4,7 @@ class AgileController < ApplicationController
   	menu_item :agile
 
 	before_filter :find_project, :authorize
+	before_filter :find_issues
 
 	helper :agile
 
@@ -11,12 +12,14 @@ class AgileController < ApplicationController
 	end
 
 	def find_project
-		# @project variable must be set before calling the authorize filter
 		@project = Project.find(params[:project_id])
 	end
 
-	def issues
-		@issues = Issue.where(:project_id => params[:cat_id])
+	def find_issues
+		@issues = Issue.where(:project_id => params[:project_id])
+	end
+
+	def backlogs
 	    respond_to do |format|
 	        format.js
 	    end
