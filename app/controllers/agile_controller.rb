@@ -16,7 +16,7 @@ class AgileController < ApplicationController
 	end
 
 	def find_issues
-		@issues = Issue.where(:project_id => params[:project_id]).take
+		@issues = Issue.where(:project_id => params[:project_id]).all
 	end
 
 	def backlogs
