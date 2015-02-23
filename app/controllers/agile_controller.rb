@@ -21,7 +21,6 @@ class AgileController < ApplicationController
 
 	def backlogs
 	    respond_to do |format|
-	    	format.html
 	        format.js
 	    end
 	end
