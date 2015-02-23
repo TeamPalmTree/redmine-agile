@@ -1,4 +1,5 @@
 en:
-  label_sprint_plural: Sprints
-  label_backlog_plural: Backlogs
+  label_backlog_plural: Backlog
+  label_kanban_board: Kanban board
+  label_scrum_board_plural: Scrum boards
   label_graph_plural: Graphs
