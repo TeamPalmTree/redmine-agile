@@ -1,4 +1,4 @@
-Redmine::Plugin.register :redmnine_agile do
+Redmine::Plugin.register :redmine_agile do
   name 'Redmnine Agile Plugin'
   author 'Alex Groleau'
   description 'Bringing the agile method to Redmine for real.'
