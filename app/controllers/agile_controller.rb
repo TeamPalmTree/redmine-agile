@@ -1,4 +1,4 @@
-class BacklogsController < ApplicationController
+class AgileController < ApplicationController
   unloadable
 
   	menu_item :agile
