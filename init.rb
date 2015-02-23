@@ -1,5 +1,3 @@
-require 'redmine'
-
 Redmine::Plugin.register :redmnine_agile do
   name 'Redmnine Agile Plugin'
   author 'Alex Groleau'
