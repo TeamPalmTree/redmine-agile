@@ -4,10 +4,10 @@
   <ul>
   <% @tabs.each do |tab| -%>
     <li><%= link_to l(tab[:label]), tab[:refresh],
-                                    :id => "tab-#{tab[:name]}",
-                                    :class => (tab[:name] != @selected_tab ? nil : 'selected'),
-                                    :onclick => "showTab('#{tab[:name]}', '#{agile_path(:project_id => @project.id, :tab => tab[:name])}'); this.blur(); return false;",
-                                    :remote => true %></li>
+		:id => "tab-#{tab[:name]}",
+		:class => (tab[:name] != @selected_tab ? nil : 'selected'),
+		:onclick => "showTab('#{tab[:name]}', '#{agile_path(:project_id => @project.id, :tab => tab[:name])}'); this.blur(); return false;",
+		:remote => true %></li>
   <% end -%>
   </ul>
   <div class="tabs-buttons" style="display:none;">
@@ -27,6 +27,10 @@
                        :style => (tab[:name] != @selected_tab ? 'display:none' : nil),
                        :class => 'tab-content') %>
 <% end -%>
+
+<% content_for :sidebar do %>
+Test
+<% end %>
 
 <% content_for :header_tags do %>
     <%= javascript_include_tag 'agile', :plugin => 'redmine_agile' %>
