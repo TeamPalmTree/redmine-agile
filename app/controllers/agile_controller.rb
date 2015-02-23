@@ -4,8 +4,10 @@ class AgileController < ApplicationController
   	menu_item :agile
 
 	before_filter :find_project, :authorize
-	before_filter :find_issues
 	before_filter :find_tabs, :only => :index
+	before_filter :find_backlogs, :only => [:index, :fetch_backlogs]
+	before_filter :find_boards, :only => [:index, :fetch_boards]
+	before_filter :find_graphs, :only => [:index, :fetch_graphs]
 
 	include AgileHelper
 
@@ -16,18 +18,30 @@ class AgileController < ApplicationController
 		@project = Project.find(params[:project_id])
 	end
 
-	def find_issues
-		@issues = Issue.all
-	end
-
 	def find_tabs
 		@tabs = agile_tabs
 	end
 
-	def backlogs
+	def find_backlogs
+		@backlogs = Issue.all
+	end
+
+	def find_boards
+		@boards = Issue.all
+	end
+
+	def find_graphs
+		@graphs = Issue.all
+	end
+
+	def fetch
+
+		@partial = params[:tab];	
+		@result = instance_variable_get('@#{partial}');
 	    respond_to do |format|
 	        format.js
 	    end
+
 	end
 
 end

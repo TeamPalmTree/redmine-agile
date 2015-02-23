@@ -1,1 +1,5 @@
-<%= render partial: 'backlogs_list', locals: {issues: @issues}  %>
+<% (defined? @issues ? @issues : issues).each do |issue| %>
+  <div>
+    Issue ID: <%= issue.id %>
+  </div>
+<% end %>
