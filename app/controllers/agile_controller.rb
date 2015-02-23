@@ -17,11 +17,11 @@ class AgileController < ApplicationController
 	end
 
 	def find_tabs
-		@tabs = [
-	    	{:name => 'backlogs', :partial => 'agile/backlogs', :label => :label_backlog_plural},
-	    	{:name => 'boards', :partial => 'agile/backlogs', :label => :label_board_board},
-			{:name => 'graphs', :partial => 'agile/backlogs', :label => :label_graph_plural}
-		]
+		@tabs = agile_tabs
+	end
+
+	def issues
+		
 	end
 
 end
