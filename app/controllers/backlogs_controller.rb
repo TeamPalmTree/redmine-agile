@@ -4,6 +4,7 @@ class BacklogsController < ApplicationController
 	before_filter :find_project, :authorize, :only => :index
 
 	def index
+		@project = Project.find(params[:project_id])
 	end
 
 	def find_project
