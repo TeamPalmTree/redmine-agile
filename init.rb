@@ -6,5 +6,5 @@ Redmine::Plugin.register :redmine_agile do
   url 'https://github.com/TeamPalmTree/redmine-agile'
   author_url 'https://github.com/awgneo'
   permission :backlogs, { :backlogs => [:index] }, :public => true
-  menu :project_menu, :agile, { :controller => 'backlogs', :action => 'index' }, :caption => 'Agile', :after => :activity, :param => :project_id
+  menu :project_menu, :agile, { :controller => 'backlogs', :action => 'index' }, :caption => 'Agile', :after => :issues, :param => :project_id
 end

@@ -5,6 +5,8 @@ class BacklogsController < ApplicationController
 
 	before_filter :find_project, :authorize, :only => :index
 
+	helper :agile
+
 	def index
 	end
 
