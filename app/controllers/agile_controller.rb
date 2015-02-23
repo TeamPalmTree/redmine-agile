@@ -20,6 +20,7 @@ class AgileController < ApplicationController
 
 	def find_tabs
 		@tabs = agile_tabs
+		@selected_tab = params[:tab]
 	end
 
 	def find_backlogs

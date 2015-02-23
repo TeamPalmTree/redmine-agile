@@ -1,5 +1,5 @@
-<% (defined? @issues ? @issues : issues).each do |issue| %>
+<% (defined? @backlogs ? @backlogs : backlogs).each do |backlog| %>
   <div>
-    Issue ID: <%= issue.id %>
+    Backlog ID: <%= backlog.id %>
   </div>
 <% end %>
