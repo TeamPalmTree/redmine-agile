@@ -6,7 +6,7 @@ class AgileController < ApplicationController
 	before_filter :find_project, :authorize
 	before_filter :find_tabs, :only => :index
 
-	helper AgileHelper
+	include AgileHelper
 
 	def index
 	end
@@ -17,7 +17,7 @@ class AgileController < ApplicationController
 	end
 
 	def find_tabs
-		@tabs = AgileHelper.agile_tabs
+		@tabs = agile_tabs
 	end
 
 	def issues
