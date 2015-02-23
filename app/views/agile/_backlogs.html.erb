@@ -1,4 +1,4 @@
-<% (defined? @backlogs ? @backlogs : backlogs).each do |backlog| %>
+<% (defined? backlogs ? backlogs : @backlogs).each do |backlog| %>
   <div>
     Backlog ID: <%= backlog.id %>
   </div>
