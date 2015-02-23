@@ -8,6 +8,7 @@ class AgileBacklogsController < ApplicationController
 	helper :agile
 
 	def index
+		render "backlogs/index"
 	end
 
 	def find_project
