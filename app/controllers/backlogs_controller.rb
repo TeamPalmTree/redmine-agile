@@ -1,7 +1,7 @@
 class BacklogsController < ApplicationController
   unloadable
 
-
-  def [index]
+  def index
   end
+
 end
