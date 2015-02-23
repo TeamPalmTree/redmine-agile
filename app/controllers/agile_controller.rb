@@ -3,10 +3,10 @@ class AgileController < ApplicationController
 
   	menu_item :agile
 
-	before_filter :find_project, :authorize, :only => :index
+	before_filter :find_project, :authorize
 	before_filter :find_tabs, :only => :index
 
-	helper :agile
+	helper AgileHelper
 
 	def index
 	end
@@ -21,7 +21,10 @@ class AgileController < ApplicationController
 	end
 
 	def issues
-		
+		@issues = Issue.where(:project_id => params[:cat_id])
+	    respond_to do |format|
+	        format.js
+	    end
 	end
 
 end
