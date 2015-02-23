@@ -6,7 +6,7 @@
     <li><%= link_to l(tab[:label]), tab[:path],
                                     :id => "tab-#{tab[:name]}",
                                     :class => (tab[:name] != @selected_tab ? nil : 'selected'),
-                                    :onclick => "showTab('#{tab[:name]}', window.location.href + '/#{tab[:name]}'); this.blur(); return false;",
+                                    :onclick => "showTab('#{tab[:name]}', '#{tab[:path]}'); this.blur(); return false;",
                                     :remote => true %></li>
   <% end -%>
   </ul>
