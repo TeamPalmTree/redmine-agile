@@ -17,7 +17,7 @@ class AgileController < ApplicationController
 	end
 
 	def find_tabs
-		@tabs = agile_tabs
+		@tabs = AgileHelper.agile_tabs
 	end
 
 	def issues
