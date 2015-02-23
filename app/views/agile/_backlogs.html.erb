@@ -1,4 +1,4 @@
-<% backlogs.each do |backlog| %>
+<% (instance_variable_defined?(:@backlogs) ? @backlogs : backlogs).each do |backlog| %>
   <div>
     Backlog ID: <%= backlog.id %>
   </div>
