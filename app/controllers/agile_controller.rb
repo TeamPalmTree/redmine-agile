@@ -19,7 +19,11 @@ class AgileController < ApplicationController
 	end
 
 	def find_tabs
-		@tabs = agile_tabs
+		@tabs = [
+	    	{:name => 'backlogs', :partial => 'agile/backlogs', :refresh => '/projects/#{@project.id}/agile/backlogs/fetch', :label => :label_backlog_plural},
+	    	{:name => 'boards', :partial => 'agile/backlogs', :refresh => '/projects/#{@project.id}/agile/backlogs/fetch', :label => :label_board_plural},
+			{:name => 'graphs', :partial => 'agile/backlogs', :refresh => '/projects/#{@project.id}/agile/backlogs/fetch', :label => :label_graph_plural}
+		]
 		@selected_tab = params[:tab] ? params[:tab] : @tabs.first[:name]
 	end
 

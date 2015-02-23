@@ -3,10 +3,10 @@
 <div class="tabs">
   <ul>
   <% @tabs.each do |tab| -%>
-    <li><%= link_to l(tab[:label]), tab[:path],
+    <li><%= link_to l(tab[:label]), tab[:refresh],
                                     :id => "tab-#{tab[:name]}",
                                     :class => (tab[:name] != @selected_tab ? nil : 'selected'),
-                                    :onclick => "showTab('#{tab[:name]}', '#{tab[:path]}'); this.blur(); return false;",
+                                    :onclick => "showTab('#{tab[:name]}', '#{tab[:refresh]}'); this.blur(); return false;",
                                     :remote => true %></li>
   <% end -%>
   </ul>
