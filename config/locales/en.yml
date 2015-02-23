@@ -1,3 +1,6 @@
 # English strings go here for Rails i18n
 en:
   # my_label: "My label"
+	label_backlog_plural: "Backlogs"
+	label_scrum_plural: "Scrum"
+	label_report_plural: "Reports"
