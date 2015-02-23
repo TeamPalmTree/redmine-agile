@@ -21,7 +21,7 @@
   $(window).resize(displayTabsButtons);
 </script>
 
-<% tabs.each do |tab| -%>
+<% @tabs.each do |tab| -%>
   <%= content_tag('div', render(:partial => tab[:partial], :locals => {:tab => tab} ),
                        :id => "tab-content-#{tab[:name]}",
                        :style => (tab[:name] != @selected_tab ? 'display:none' : nil),
