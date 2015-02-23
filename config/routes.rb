@@ -1,5 +1,3 @@
 # Plugin's routes
 # See: http://guides.rubyonrails.org/routing.html
-RedmineApp::Application.routes.draw do
-	get 'backlogs', :to => 'backlogs#index'
-end
+get '/backlogs', :to => 'backlogs#index'
