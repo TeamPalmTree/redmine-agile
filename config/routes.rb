@@ -1,4 +1,6 @@
 # Plugin's routes
 # See: http://guides.rubyonrails.org/routing.html
-get '/projects/:project_id/agile/(:tab)', :to => 'agile#index', as: 'agile'
-get '/projects/:project_id/agile/:tab/fetch', :to => 'agile#fetch'
+get '/projects/:project_id/agile', :to => 'agile#index', as: 'agile_mode'
+get '/projects/:project_id/agile/backlogs', :to => 'agile#backlogs'
+get '/projects/:project_id/agile/board/:version', :to => 'agile#board', as: 'agile_board'
+get '/projects/:project_id/agile/graph/:graph', :to => 'agile#graph', as: 'agile_graph'

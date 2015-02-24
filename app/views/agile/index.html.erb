@@ -1,35 +1,17 @@
-<h2>Agile</h2>
-
-<div class="tabs">
-  <ul>
-  <% @tabs.each do |tab| -%>
-    <li><%= link_to l(tab[:label]), tab[:refresh],
-		:id => "tab-#{tab[:name]}",
-		:class => (tab[:name] != @selected_tab ? nil : 'selected'),
-		:onclick => "showTab('#{tab[:name]}', '#{agile_path(:project_id => @project.id, :tab => tab[:name])}'); this.blur(); return false;",
-		:remote => true %></li>
-  <% end -%>
-  </ul>
-  <div class="tabs-buttons" style="display:none;">
-    <button class="tab-left" type="button" onclick="moveTabLeft(this);"></button>
-    <button class="tab-right" type="button" onclick="moveTabRight(this);"></button>
-  </div>
+<div class="agile-content">
+	<%= render 'backlogs', :backlogs => @backlogs %>
 </div>
 
-<script>
-  $(document).ready(displayTabsButtons);
-  $(window).resize(displayTabsButtons);
-</script>
-
-<% @tabs.each do |tab| -%>
-  <%= content_tag('div', render(:partial => tab[:partial], :locals => {:tab => tab} ),
-                       :id => "tab-content-#{tab[:name]}",
-                       :style => (tab[:name] != @selected_tab ? 'display:none' : nil),
-                       :class => 'tab-content') %>
-<% end -%>
-
 <% content_for :sidebar do %>
-<%= render :partial => 'sidebar' %>
+<h3 class="agile-link"><%= link_to l(:label_backlog_plural), agile_backlogs_path(:project_id => @project.id), :remote => true %></h3>
+<h3><%= l(:label_board_plural) %></h3>
+<ul>
+<li class="agile-link" data-mode="board"><% link_to '2015-02-D', agile_board_path(:project_id => @project.id, :version => '2015-02-D'), :remote => true %></li>
+</ul>
+<h3><%= l(:label_graph_plural) %></h3>
+<ul>
+<li class="agile-link" data-mode="graph"><% link_to 'Burndown', agile_graph_path(:project_id => @project.id, :graph => 'burndown'), :remote => true %></li>
+</ul>
 <% end %>
 
 <% content_for :header_tags do %>
