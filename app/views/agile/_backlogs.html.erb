@@ -11,3 +11,5 @@
 <div class="box">
 	<%= render :partial => 'issues_list', :locals => { :issues => backlogs[:product] } %>
 </div>
+
+<%= context_menu issues_context_menu_path %>
