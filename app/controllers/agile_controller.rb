@@ -4,7 +4,6 @@ class AgileController < ApplicationController
   	menu_item :agile
 
 	before_filter :find_project, :authorize
-	before_filter :find_tabs, :only => :index
 	before_filter :find_backlogs, :only => [:index, :backlogs]
 	before_filter :find_boards, :only => [:fetch_boards]
 	before_filter :find_graphs, :only => [:fetch_graphs]
