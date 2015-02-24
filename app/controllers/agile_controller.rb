@@ -5,8 +5,8 @@ class AgileController < ApplicationController
 
 	before_filter :find_project, :authorize
 	before_filter :find_backlogs, :only => [:index, :backlogs]
-	before_filter :find_boards, :only => [:fetch_boards]
-	before_filter :find_graphs, :only => [:fetch_graphs]
+	before_filter :find_board, :only => [:board]
+	before_filter :find_report, :only => [:report]
 
 	include AgileHelper
 
@@ -22,24 +22,36 @@ class AgileController < ApplicationController
 		@backlogs = Issue.all
 	end
 
-	def find_boards
-		@boards = Issue.all
+	def find_board
+		@board = Issue.all
 	end
 
-	def find_graphs
-		@graphs = Issue.all
+	def find_report
+		@report = Issue.all
 	end
 
 	def backlogs
-
+		@partial = 'backlogs'
+		@locals = { :backlogs => @backlogs }
+		respond_to do |format|
+			format.js { render 'agile/backlogs' }
+		end
 	end
 
-	def boards
-
+	def board
+		@partial = 'board'
+		@locals = { :board => @board }
+		respond_to do |format|
+			format.js { render 'agile/board' }
+		end
 	end
 
-	def graphs
-
+	def report
+		@partial = 'report'
+		@locals = { :report => @report }
+		respond_to do |format|
+			format.js { render 'agile/report' }
+		end
 	end
 
 end
