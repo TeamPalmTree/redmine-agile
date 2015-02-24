@@ -12,7 +12,7 @@ class AgileController < ApplicationController
 
 	def index
 		@partial = 'backlogs'
-		@object = @backlogs
+		@object = @Issue.all
 	end
 
 	def find_project
