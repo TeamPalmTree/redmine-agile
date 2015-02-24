@@ -12,7 +12,7 @@ class AgileController < ApplicationController
 
 	def index
 		@partial = 'agile/backlogs'
-		@localss = { :backlogs => @backlogs }
+		@object = @backlogs
 	end
 
 	def find_project
@@ -33,7 +33,7 @@ class AgileController < ApplicationController
 
 	def backlogs
 		@partial = 'backlogs'
-		@locals = { :backlogs => @backlogs }
+		@object = @backlogs
 		respond_to do |format|
 			format.html { render 'agile/index' }
 			format.js { render 'agile/fetch' }
@@ -42,7 +42,7 @@ class AgileController < ApplicationController
 
 	def board
 		@partial = 'board'
-		@locals = { :board => @board }
+		@object = @board
 		respond_to do |format|
 			format.html { render 'agile/index' }
 			format.js { render 'agile/fetch' }
@@ -51,7 +51,7 @@ class AgileController < ApplicationController
 
 	def report
 		@partial = 'report'
-		@locals = { :report => @report }
+		@object = @report
 		respond_to do |format|
 			format.html { render 'agile/index' }
 			format.js { render 'agile/fetch' }
