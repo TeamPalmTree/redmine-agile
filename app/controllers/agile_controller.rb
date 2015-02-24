@@ -33,7 +33,7 @@ class AgileController < ApplicationController
 
 	def backlogs
 		@partial = 'backlogs'
-		@object = @backlogs
+		@object = { :backlogs => @backlogs }
 		respond_to do |format|
 			format.html { render 'index' }
 			format.js { render 'fetch' }
@@ -42,7 +42,7 @@ class AgileController < ApplicationController
 
 	def board
 		@partial = 'board'
-		@object = @board
+		@object = { :board => @board }
 		respond_to do |format|
 			format.html { render 'index' }
 			format.js { render 'fetch' }
@@ -51,7 +51,7 @@ class AgileController < ApplicationController
 
 	def report
 		@partial = 'report'
-		@object = @report
+		@object = { :report => @report }
 		respond_to do |format|
 			format.html { render 'index' }
 			format.js { render 'fetch' }
