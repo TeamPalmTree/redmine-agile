@@ -11,7 +11,7 @@ class AgileController < ApplicationController
 	include AgileHelper
 
 	def index
-		@partial = 'agile/backlogs'
+		@partial = 'backlogs'
 		@object = @backlogs
 	end
 
@@ -35,8 +35,8 @@ class AgileController < ApplicationController
 		@partial = 'backlogs'
 		@object = @backlogs
 		respond_to do |format|
-			format.html { render 'agile/index' }
-			format.js { render 'agile/fetch' }
+			format.html { render 'index' }
+			format.js { render 'fetch' }
 		end
 	end
 
@@ -44,8 +44,8 @@ class AgileController < ApplicationController
 		@partial = 'board'
 		@object = @board
 		respond_to do |format|
-			format.html { render 'agile/index' }
-			format.js { render 'agile/fetch' }
+			format.html { render 'index' }
+			format.js { render 'fetch' }
 		end
 	end
 
@@ -53,8 +53,8 @@ class AgileController < ApplicationController
 		@partial = 'report'
 		@object = @report
 		respond_to do |format|
-			format.html { render 'agile/index' }
-			format.js { render 'agile/fetch' }
+			format.html { render 'index' }
+			format.js { render 'fetch' }
 		end
 	end
 
