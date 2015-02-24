@@ -21,7 +21,7 @@ class AgileController < ApplicationController
 
 	def find_backlogs
 		@backlogs = {
-			:versions => Version.visible.includes(:issues),
+			:versions => Version.visible.includes(:fixed_issues),
 			:product => Issue.visible.open.where(fixed_version: nil)
 		}
 	end
