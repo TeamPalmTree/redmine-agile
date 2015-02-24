@@ -1,6 +1,8 @@
 <h2>Agile » Backlogs</h2>
-<% backlogs.each do |backlog| %>
-  <div>
-    Backlog ID: <%= backlog.id %>
-  </div>
+<% backlogs[:versions] do |version_backlog| %>
+	<h3>version_backlog.name</h3>
+<% end %>
+<h3>Product</h3>
+<% backlogs[:product] do |product_issue| %>
+	<h3>product_issue.id</h3>
 <% end %>
